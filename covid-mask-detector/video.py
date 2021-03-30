@@ -32,8 +32,8 @@ def tagVideo(modelpath, videopath, outputPath=None):
     model.eval()
     
     faceDetector = FaceDetector(
-        prototype='/content/covid-mask-detector/covid-mask-detector/models/deploy.prototxt.txt',
-        model='/content/covid-mask-detector/covid-mask-detector/models/res10_300x300_ssd_iter_140000.caffemodel',
+        prototype='./models/deploy.prototxt.txt',
+        model='./models/res10_300x300_ssd_iter_140000.caffemodel',
     )
     
     transformations = Compose([
@@ -46,7 +46,7 @@ def tagVideo(modelpath, videopath, outputPath=None):
         writer = FFmpegWriter(str(outputPath))
     
     font = cv2.FONT_HERSHEY_SIMPLEX
-    #cv2.namedWindow('main', cv2.WINDOW_NORMAL)
+    cv2.namedWindow('main', cv2.WINDOW_NORMAL)
     labels = ['No mask', 'Mask']
     labelColor = [(10, 0, 255), (10, 255, 0)]
     for frame in vreader(str(videopath)):
@@ -81,7 +81,7 @@ def tagVideo(modelpath, videopath, outputPath=None):
                         font, 1, labelColor[predicted], 2)
         if outputPath:
             writer.writeFrame(cv2.cvtColor(frame, cv2.COLOR_RGB2BGR))
-        #cv2.imshow('main', frame)
+        cv2.imshow('main', frame)
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
     if outputPath:
