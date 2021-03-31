@@ -1,14 +1,21 @@
+export OPENBLAS_CORETYPE=ARMV8
 ########"pip3 upgrade to 21.0.1####################
 pip3 install -U pip
+########Install lastest opencv2####################
+pip3 install opencv-python
+######## install numpy 1.16.5#####################
+pip3 install -U numpy==1.16.5
 ########"Download Cython&scikit-learn##############
 pip3 install --upgrade setuptools
 sudo apt-get install libpcap-dev libpq-dev
 sudo -H pip3 install cython
+pip3 install scikit-video==1.1.11
 sudo pip3 install git+https://github.com/scikit-learn/scikit-learn.git
 ##########"Download torch=1.4.0 for aarch64"########
 wget https://nvidia.box.com/shared/static/c3d7vm4gcs9m728j6o5vjay2jdedqb55.whl -O torch-1.4.0-cp36-cp36m-linux_aarch64.whl
 sudo apt-get install python3-pip libopenblas-base libopenmpi-dev 
 pip3 install Cython
+pip3 install 'pillow<7'
 pip3 install torch-1.4.0-cp36-cp36m-linux_aarch64.whl
 ####"Download torchvision=0.5.0 for aarch64"########
 sudo apt-get install libjpeg-dev zlib1g-dev libpython3-dev libavcodec-dev libavformat-dev libswscale-dev
