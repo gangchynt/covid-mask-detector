@@ -29,4 +29,5 @@ cd ../  # attempting to load torchvision from build dir will result in import er
 pip3 install pytorch-lightning==0.7.3
 ################"Install Click"####################
 pip3 install click
-
+pip3 install pandas
+pip3 install scikit-learn

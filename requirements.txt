@@ -1,7 +1,0 @@
-click
-numpy
-pandas
-scikit_video
-pytorch_lightning
-tqdm
-scikit_learn
