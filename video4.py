@@ -51,6 +51,9 @@ def tagVideo(modelpath, outputPath=None):
     cv2.namedWindow('main', cv2.WINDOW_NORMAL)
     labels = ['No mask', 'Mask']
     labelColor = [(10, 0, 255), (10, 255, 0)]
+    #this channel for high resolution
+    #stream=cv2.VideoCapture("rtsp://admin:admin@192.168.1.107:554/1")
+    #this channel  for low resolution
     stream = cv2.VideoCapture("rtsp://admin:admin@192.168.1.107:554/media/video2")
     while(1):
         ret, frame =stream.read()
